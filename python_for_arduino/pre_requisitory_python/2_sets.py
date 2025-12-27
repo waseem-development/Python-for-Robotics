@@ -22,3 +22,10 @@ print("Union: ",newSetUnion, "\n")
 newSetIntersection = newSetUnion.intersection({3,5,10})
 
 print("Intersection: ", newSetIntersection)
+
+
+newSet = set()
+newSet.add(18)
+newSet.add("18")
+print("\n",newSet)
+print(type(newSet))
