@@ -14,7 +14,7 @@ def removeTask(tasks):
         return
     option = int(input("""Press
                         1 ==> Remove only one task
-                        2 ==> Remove al tasks"""))
+                        2 ==> Remove all tasks"""))
     if option == 1:
         task = input("Enter the task to be deleted: ").lower()
         if not task in tasks:
