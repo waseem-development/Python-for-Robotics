@@ -47,7 +47,8 @@ while True:
         """Press
           1 ==> To add a task
           2 ==> To remove a task
-          3 ==> To view all your tasks"""
+          3 ==> To view all your tasks
+          4 ==> Exit"""
     )
     option = int(input("Option: "))
     print()
@@ -60,6 +61,9 @@ while True:
     elif option == 3:
         viewTask(tasks)
         print()
+    elif option == 4:
+        print("Bye 👋🏻")
+        break
     else:
         print("Invalid option!!!\n")
         continue
