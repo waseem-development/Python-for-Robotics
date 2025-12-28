@@ -1,3 +1,4 @@
+# ***************** Add a Task ***************** 
 def addTask(tasks):
     task = input("Add a new task: ").lower()
     if task in tasks:
@@ -7,7 +8,7 @@ def addTask(tasks):
         tasks.append(task)
         print("\nTask succesfully added to your to-do-list.")
 
-
+# ***************** Remove a Task(s) ***************** 
 def removeTask(tasks):
     if len(tasks) == 0:
         print("To-Do-List is empty")
@@ -29,7 +30,7 @@ def removeTask(tasks):
     else:
         print("Invalid option!!!\n")
 
-
+# ***************** View all Task(s) ***************** 
 def viewTask(tasks):
     if len(tasks) == 0:
         print("To-Do-List is empty")
