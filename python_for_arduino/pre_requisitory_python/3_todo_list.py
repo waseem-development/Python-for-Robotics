@@ -13,12 +13,10 @@ def removeTask(tasks):
     if len(tasks) == 0:
         print("To-Do-List is empty")
         return
-    option = int(input(
-        f"""Press
-           1 ==> Remove only one task
-           2 ==> Remove all tasks
-        Option: 
-        """, end=""))
+print("Press")
+print("1 ==> Remove only one task")
+print("2 ==> Remove all tasks")
+option = int(input("Option: "))
     if option == 1:
         task = input("Enter the task to be deleted: ").lower()
         if not task in tasks:
