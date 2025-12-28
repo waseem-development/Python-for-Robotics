@@ -10,7 +10,7 @@ def addTask(tasks):
 
 def removeTask(tasks):
     if len(tasks) == 0:
-        print("\nTo-Do-List is empty")
+        print("To-Do-List is empty")
         return
     task = input("Enter the task to be deleted: ").lower()
     if not task in tasks:
