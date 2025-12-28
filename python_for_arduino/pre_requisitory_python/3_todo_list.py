@@ -3,7 +3,7 @@ def addTask(tasks):
     if task in tasks:
         print("\nTask already added.")
         return
-    else:
+    else:        
         tasks.append(task)
         print("\nTask succesfully added to your to-do-list.")
 
@@ -12,12 +12,22 @@ def removeTask(tasks):
     if len(tasks) == 0:
         print("To-Do-List is empty")
         return
-    task = input("Enter the task to be deleted: ").lower()
-    if not task in tasks:
-        print("\nTask does not exist so it cannot be deleted:")
+    option = int(input("""Press
+                        1 ==> Remove only one task
+                        2 ==> Remove al tasks"""))
+    if option == 1:
+        task = input("Enter the task to be deleted: ").lower()
+        if not task in tasks:
+            print("\nTask does not exist so it cannot be deleted:")
+        else:
+            tasks.remove(task)
+            print("\nTask succesfully removed from to-do-list.")
+
+    elif option == 2:
+        tasks.clear()
+        print("\nAll tasks successfully removed. The list is now empty.")
     else:
-        tasks.remove(task)
-        print("\nTask succesfully removed from to-do-list.")
+        print("Invalid option!!!\n")
 
 
 def viewTask(tasks):
@@ -32,11 +42,13 @@ def viewTask(tasks):
 
 tasks = []
 print("********* Welcome to the ABC Task App *********")
-while(True):
-    print("""Press
+while True:
+    print(
+        """Press
           1 ==> To add a task
           2 ==> To remove a task
-          3 ==> To view all your tasks""")
+          3 ==> To view all your tasks"""
+    )
     option = int(input("Option: "))
     print()
     if option == 1:
