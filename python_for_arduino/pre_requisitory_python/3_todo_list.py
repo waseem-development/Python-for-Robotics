@@ -1,38 +1,47 @@
 # ***************** Add a Task ***************** 
 def addTask(tasks):
-    task = input("Add a new task: ").lower()
-    if task in tasks:
-        print("\nTask already added.")
-        return
-    else:        
-        tasks.append(task)
-        print("\nTask succesfully added to your to-do-list.")
+    task_name = input("Add a new task: ").strip().lower()
+    time = input("Enter time (HH:MM): ").strip()
+
+    for task in tasks:
+        if task["task"] == task_name:
+            print("\nTask already added.")
+            return
+
+    tasks.append({"task": task_name, "time": time})
+    print("\nTask successfully added to your to-do-list.")
+
 
 # ***************** Remove a Task(s) ***************** 
 def removeTask(tasks):
     if len(tasks) == 0:
         print("To-Do-List is empty")
         return
+
     print(
         """Press
           1 ==> Remove one task
-          2 ==> To remove all tasks"""
+          2 ==> Remove all tasks"""
     )
     option = int(input("Option: "))
 
     if option == 1:
-        task = input("Enter the task to be deleted: ").lower()
-        if not task in tasks:
-            print("\nTask does not exist so it cannot be deleted:")
-        else:
-            tasks.remove(task)
-            print("\nTask succesfully removed from to-do-list.")
+        task_name = input("Enter the task to be deleted: ").strip().lower()
+
+        for task in tasks:
+            if task["task"] == task_name:
+                tasks.remove(task)
+                print("\nTask successfully removed from to-do-list.")
+                return
+
+        print("\nTask does not exist so it cannot be deleted.")
 
     elif option == 2:
         tasks.clear()
         print("\nAll tasks successfully removed. The list is now empty.")
     else:
         print("Invalid option!!!\n")
+
 
 # ***************** View all Task(s) ***************** 
 def viewTask(tasks):
@@ -42,11 +51,11 @@ def viewTask(tasks):
     else:
         print("Your Tasks are listed below:")
         for index, task in enumerate(tasks):
-            print(f"{index + 1}) {task.capitalize()}")
+            print(f"{index + 1}) {task["task"].capitalize()} at {task["time"]}")
 
 
-tasks = []
 print("********* Welcome to the ABC Task App *********")
+tasks = []
 while True:
     print(
         """Press
