@@ -1,3 +1,4 @@
+#  THIS PROGRAM IS INCOMPLETE I NEED TO COMPLETE IT TOMORROW AFTER GETTING A DEEPER REVISION OF DICTIONARIES
 def getNumbers(numbersList):
     while True:
         prompt = input('Enter a number or type "stop": ')
